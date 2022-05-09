@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+input[type=text] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #5489ec;
+  color: white;
+}
+input[type=number] {
+  width: 10%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #5489ec;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 style="background-color: #96D4D4; width: fit-content;">Add a Customer from this page</h1>
+<div class="pushLeft">
+  <h3 style="background-color: cyan; width: fit-content;">{{msg}}</h3>
+</div>
+
+<form action="/addCustomer" method="POST">
+  
+  <input type="text" name="customerName" placeholder="Enter Customer Name Here" required> <br>
+  <input type="text" name="customerCity" placeholder="Enter Customer City" required>
+  <input type="number" name="customerAge" placeholder="Enter Age" required><br>
+  <button type="submit" style="background-color: yellow; width: 60; height: 30px;">Add A Customer</button>
+  
+</form><br><br>
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+</body>
+{%endblock%}
+</html>

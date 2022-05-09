@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+input[type=text] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #5489ec;
+  color: white;
+  
+}
+input[type=number] {
+  width: 14%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #5489ec;
+  color: white;
+  size: 70px;
+}
+</style>
+</head>
+<body>
+
+<h1 style="background-color: #14c23a; width: fit-content;">Add a book from this page</h1>
+<div class="pushLeft">
+  <h3 style="background-color: cyan; width: fit-content;">{{msg}}</h3>
+</div>
+
+<form action="/addBook" method="POST">
+  
+  <input type="text" name="bookName" placeholder="Enter Book Name Here" minlength="2" required> <br>
+  <input type="text" name="author" placeholder="Enter Author Name" required><br>
+  <input type="number" name="yearPublished" placeholder="Enter Year Published" required><br>
+  <label for="bookType" style="background-color: black; color: white;">Select Book Type:  1 – Loan up to 10 days;   2 – Loan up to 5 days;   3 – Loan up to 2 days: </label><br><br>
+  <select id="bookType" name="bookType" type="number" style="width: 80px; height: 100px;" required>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+  </select><br><br>
+  <button type="submit" style="background-color: yellow; width: 60; height: 30px;">Add A book</button>
+  
+</form><br><br>
+
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+</body>
+{%endblock%}
+</html>

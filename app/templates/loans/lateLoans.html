@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #e9911f;
+}
+</style>
+<h1 class="pushLeft" style="background-color: #e9911f;">The List of Late Loans</h1>
+<h2 style="background-color: darksalmon; color: darkslateblue;">***NOTE : The book type sets the maximum loan time for the book:  1 – up to 10 days;  2 – up to 5 days; 3 – up to 2 days***</h2>
+
+
+<!-- <h1 class="pushLeft">The List of All Books</h1> -->
+
+<div class="pushLeft">
+<table style="border: 0pt; text-align: center;"
+    <tr>
+        
+        <th>Customer Name</th>
+        <th>Age</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Book Type</th>
+        <th>Loan Date</th>
+        <th>Return Date</th>
+        <th>Late By (Days)</th>
+        
+    </tr>
+    {% for row in allLateLoans %}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+        <td>{{row[4]}}</td>
+        <td>{{row[5]}}</td>
+        <td>{{row[6]}}</td>
+        <td>{{row[7]}}</td>
+        
+    </tr>
+    {% endfor %}
+   
+</table>
+</div>
+<br>
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+{%endblock%}
+{%block footer%}{{super()}}{%endblock%}

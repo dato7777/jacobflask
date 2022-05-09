@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{%block content%}
+
+    <style>
+    table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+    }
+    th, td {
+      background-color: #14c23a;
+    }
+    </style>
+    <h1 class="pushLeft" style="background-color: #14c23a;">The List of All Books</h1>
+
+
+<!-- <h1 class="pushLeft">The List of All Books</h1> -->
+
+<div class="pushLeft">
+    <table style="border: 0pt; text-align: center;"
+        <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Year Published</th>
+            <th>Book Type</th>
+        </tr>
+        {% for book in myBooks %}
+        <tr>
+            <td>{{book[0]}}</td>
+            <td>{{book[1]}}</td>
+            <td>{{book[2]}}</td>
+            <td>{{book[3]}}</td>
+            <td>{{book[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div><br>
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+
+{%endblock%}
+

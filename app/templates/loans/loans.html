@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #d3ee39;
+}
+</style>
+<h1 class="pushLeft" style="background-color: #d3ee39;">The List of All Loans</h1>
+<div class="pushLeft">
+  <h3>{{msg}}</h3>
+</div>
+<div class="pushLeft">
+<table style="border: 0pt; text-align: center;"
+    <tr>
+        <th>Loan ID</th>
+        <th>Customer ID</th>
+        <th>Book ID</th>
+        <th>Loan Date</th>
+        <th>Return Date</th>
+        
+    </tr>
+    {% for loan in myLoans %}
+    <tr>
+        <td>{{loan[0]}}</td>
+        <td>{{loan[1]}}</td>
+        <td>{{loan[2]}}</td>
+        <td>{{loan[3]}}</td>
+        <td>{{loan[4]}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<br>
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+{%endblock%}

@@ -1,0 +1,35 @@
+<style>
+    table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+    }
+    th, td {
+      background-color: #96D4D4;
+    }
+    </style>
+
+<h1 class="pushLeft" style="background-color: #96D4D4; width: fit-content;">The List of All Customers</h1>
+
+<div class="pushLeft">
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>City</th>
+            <th>Age</th>
+            
+        </tr>
+        {% for row in myCustomers %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+           
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+

@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReturnBook</title>
+    <style> 
+      input[type=date] {
+        width: 20%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: #5489ec;
+        color: white;
+      }
+      input[type=number] {
+        width: 15%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: #5489ec;
+        color: white;
+      }
+      </style>
+</head>
+<body>
+  <h1 style="background-color: #d3ee39;">Please Fill the details to return a book</h1>
+  <div class="pushLeft">
+  <h3 style="background-color: cyan; width: fit-content;">{{msg}}</h3>
+</div>
+    
+
+<form action="/returnBook" method="POST">
+  <input type="number" name="loanID" placeholder="Enter Loan ID" required> <br>
+  <input type="number" name="customerID" placeholder="Enter Customer ID" required> <br>
+  <input type="number" name="bookID" placeholder="Enter Book ID Here" required><br>
+  <label for="returnDate" style="background-color: aquamarine;">Return Date:</label><br>
+  <input type="date" id="returnDate" name="returnDate" value="loanDate" required ><br>
+  
+  <button type="submit" style="background-color: yellow; width: 80px; height: 50px;">Return A book</button>
+  
+</form><br><br>
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+</body>
+{%endblock%}
+</html>

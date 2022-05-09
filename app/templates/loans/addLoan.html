@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loans</title>
+    <style> 
+      input[type=date] {
+        width: 20%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: #5489ec;
+        color: white;
+      }
+      input[type=number] {
+        width: 15%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        background-color: #5489ec;
+        color: white;
+      }
+      </style>
+</head>
+<body>
+    <h1 style="background-color: #d3ee39;">Loan a Book from this page</h1>
+    <div class="pushLeft">
+    <h3 style="background-color: cyan; width: fit-content;">{{res}}</h3>
+  </div>
+<form action="/addLoan" method="POST">
+  
+  <input type="number" name="customerID" placeholder="Enter Customer ID" required> <br>
+  <input type="number" name="bookID" placeholder="Enter Book ID" required><br>
+  <label for="loanDate" style="background-color: aquamarine;">Loan Date:</label><br>
+  <input type="date" id="loanDate" name="loanDate" min="loanDate" required>
+  <button type="submit" style="background-color: yellow; width: 60; height: 30px;">Loan a Book</button>
+  
+</form><br><br>
+
+<button onclick="window.location.href='/'"" class="button button2" style="width: 7%; height: 50px; background-color: slateblue; font-size: large;">Back to Action</button>
+
+</body>
+{%endblock%}
+</html>

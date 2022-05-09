@@ -1,0 +1,35 @@
+    <style>
+    table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+    }
+    th, td {
+      background-color: #14c23a;
+    }
+    </style>
+    <h1  style="background-color: #14c23a; width: fit-content;" class="pushLeft">The List of Available Books</h1>
+
+<div class="pushLeft">
+    <table style="border: 0pt;"
+        <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Year Published</th>
+            <th>Book Type</th>
+        </tr>
+        {% for row in myBooks %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+
+
